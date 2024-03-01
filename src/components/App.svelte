@@ -1,13 +1,23 @@
 <script>
-  // Write your JS here, or import other files
+  import ScrollyTeller from '../components/ScrollyTeller.svelte';
+
+  // Your slides array, containing paths to images or SVG content
+  const slides = [
+    'no_talking.svg',
+    'silent-silent.svg',
+    'silent-defect.svg',
+    'defect-defect.svg',
+    'defect-silent.svg',
+    'matrix_start.svg',
+    'matrix_silent.svg',
+    'matrix_mix.svg',
+    'matrix_defect.svg',
+  ];
 </script>
 
-<main>
-  <h1>Svelte template</h1>
-
-  <p>Write your HTML here</p>
-</main>
+<ScrollyTeller {slides} />
 
 <style>
-  /* Write your CSS here */
+  /* Additional styling as needed */
 </style>
+
