@@ -7,72 +7,51 @@
   bind:offset
   bind:progress
 >
-  <div class="background" slot="background">
+  <div class="background" slot="background" >
     <div class="progress-bars">
-      <p>current section: <strong>{index + 1}/{count}</strong></p>
-      <progress value={count ? (index + 1) / count : 0} />
 
-      <p>offset in current section</p>
+      <!-- <p>till next page</p> -->
       <progress value={offset || 0} />
 
-      <p>total progress</p>
-      <progress value={progress || 0} />
+      <!-- <p>total progress</p>
+      <progress value={progress || 0} /> -->
     </div>
   </div>
 
-  <div class="foreground" slot="foreground">
+  <div class="foreground" slot="foreground" >
 
-      <section>This is the first section.</section>
-      <section>This is the second section.</section>
-      <section>This is the third section.</section>
+    <section> 1  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 2  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 3  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 4  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 5  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 6  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 7  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 8  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 9  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+
     </div>
 
 </Scroller>
 
 <script>
-    import { onMount } from 'svelte';
     import Scroller from "@sveltejs/svelte-scroller";
 
     let count, index, offset, progress;
   
     export let slides = [];
-    let currentSlide = 0;
-    let throttleTimeout = null; // Throttling scroll events
-    const throttlePeriod = 1000; // controls the execution rate of a function
-  
-    function handleScroll(event) {
-      event.preventDefault(); // Prevent page scrolling
-  
-      if (throttleTimeout) return; // Throttle scroll events
-  
-      const direction = event.deltaY > 0 ? 'down' : 'up';
-      changeSlide(direction);
-  
-      throttleTimeout = setTimeout(() => {
-        clearTimeout(throttleTimeout);
-        throttleTimeout = null;
-      }, throttlePeriod);
-    }
-  
-    function changeSlide(direction) {
-      if (direction === 'down' & currentSlide !== slides.length - 1) {
-        currentSlide = (currentSlide + 1) % slides.length;
-      } else if (direction === 'up' & currentSlide !== 0) {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      }
-    }
-    
-    // wheel: fires when the user scrolls using their mouse wheel or trackpad
-    onMount(() => {
-      window.addEventListener('wheel', handleScroll, { passive: false });
-  
-      return () => {
-        window.removeEventListener('wheel', handleScroll);
-      };
-    });
+
   </script>
   
-  <img src={slides[currentSlide]} alt={`Slide ${currentSlide + 1}`} class="slide-image">
   
   <style>
     .slide-image {
@@ -83,5 +62,35 @@
       max-width: 90%;
       max-height: 90vh;
     }
+
+	[slot="background"] {
+		background-color: rgba(97, 36, 36, 0);
+		border-top: 2px solid #ff400000;
+		border-bottom: 2px solid #ff400000;
+		font-size: 1.4em;
+		overflow: hidden;
+		padding: 1em;
+    transform: scale(0.7) translate(-20%, -30%);
+	}
+	
+	[slot="background"] p {
+		margin: 0;
+	}
+	
+	[slot="foreground"] {
+		pointer-events: none;
+	}
+	
+	[slot="foreground"] section {
+		pointer-events: all;
+	}
+	
+	section {
+		height: 80vh;
+		background-color: rgba(0,0,0,0);
+		color: white;
+		padding: 1em;
+		margin: 0 0 2em 0;
+	}
   </style>
   
