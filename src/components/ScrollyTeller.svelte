@@ -104,6 +104,8 @@
     <section id="slide-10"> 11  
       {#if index === 10}
       <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+      <svg id="slide-10" width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+      </svg>
       {/if}
     </section>
     <section> 12  
@@ -114,6 +116,8 @@
     <section id="slide-12"> 13  
       {#if index === 12}
       <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+      <svg id="slide-12" width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+      </svg>
       {/if}
     </section>
     <section> 14  
@@ -130,15 +134,15 @@
 <script>
     import Scroller from "@sveltejs/svelte-scroller";
 
-    let count, index, offset, progress;
+    let index, offset;
     import { onMount } from 'svelte';
     import * as d3 from 'd3';
   
     export let slides = [];
 
-    onMount(() => {
-    // We only want to add the clickers when the slide with the index 9 or 11 is active
-    });
+    // onMount(() => {
+    // // We only want to add the clickers when the slide with the index 9 or 11 is active
+    // });
 
   
     $: {
@@ -154,15 +158,13 @@
 
     // Define the coordinates and sizes for the "Cooperate" and "Defect" clickers
     const clickersData = [
-      { id: 'cooperate', x: 10, y: 10, width: 100, height: 50, color: 'green' },
-      { id: 'defect', x: 120, y: 10, width: 100, height: 50, color: 'red' }
+      { id: 'cooperate-clicker', x: 160, y: 75, width: 80, height: 30, fill: 'green', stroke: 'black' },
+      { id: 'defect-clicker', x: 160, y: 125, width: 80, height: 30, fill: 'red', stroke: 'black' }
     ];
 
     // Bind the clickers data to the rectangles
     const clickers = svg.selectAll('rect.clicker')
       .data(clickersData, d => d.id);
-
-    console.log('here')  
 
     // Enter selection: Create rectangles if they don't exist yet
     clickers.enter()
@@ -236,6 +238,7 @@
       transform: translate(-50%, -50%);
       max-width: 90%;
       max-height: 90vh;
+      z-index: -1;
     }
     .slide-image1 {
       position: fixed;
@@ -290,11 +293,11 @@
     font-weight: bold;
   }
 
-  .button {
+  .clicker {
     position: fixed;
-    transform: translate(158%, 137%);
+    transform: translate(-50%, 100%);
     z-index: 1;
-    display: block
+    /* display: block */
 	}
   
   </style>
