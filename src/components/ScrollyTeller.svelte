@@ -38,6 +38,14 @@
     </section>
     <section> 9  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
     </section>
+    <section> 10  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 11  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 12  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
+    <section> 13  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
 
     </div>
 

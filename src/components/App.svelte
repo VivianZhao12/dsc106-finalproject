@@ -12,6 +12,10 @@
     'matrix_silent.svg',
     'matrix_mix.svg',
     'matrix_defect.svg',
+    'interact_given_cooperate.svg',
+    'outcome_given_cooperate.svg',
+    'interact_given_defect.svg',
+    'outcome_given_defect.svg',
   ];
 </script>
 
