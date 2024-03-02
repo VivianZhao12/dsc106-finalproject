@@ -3,6 +3,7 @@
 
   // Your slides array, containing paths to images or SVG content
   const slides = [
+    'first_page.svg',
     'no_talking.svg',
     'silent-silent.svg',
     'silent-defect.svg',

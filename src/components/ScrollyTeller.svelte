@@ -20,7 +20,9 @@
 
   <div class="foreground" slot="foreground" >
 
-    <section> 1  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+
+    <section> <h1 class="topic">To Snitch or Not to Snitch: That is the Question</h1>
+        <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image1">
     </section>
     <section> 2  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
     </section>
@@ -46,6 +48,8 @@
     </section>
     <section> 13  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
     </section>
+    <section> 14  <img src={slides[index]} alt={`Slide ${index + 1}`} class="slide-image">
+    </section>
 
     </div>
 
@@ -62,6 +66,18 @@
   
   
   <style>
+    .topic {
+      position: fixed;
+      text-align: center;
+      max-height: 90vh;
+      font-family: "Rye", serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 50px;
+    }
+    
+
+
     .slide-image {
       position: fixed;
       top: 50%;
@@ -70,9 +86,20 @@
       max-width: 90%;
       max-height: 90vh;
     }
+    .slide-image1 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) ;
+      max-width: 90%;
+      max-height: 90vh;
+    }
+
+
 
 	[slot="background"] {
-		background-color: rgba(97, 36, 36, 0);
+    position: fixed;
+		background-color: rgba(0, 0, 0, 0);
 		border-top: 2px solid #ff400000;
 		border-bottom: 2px solid #ff400000;
 		font-size: 1.4em;
@@ -88,17 +115,18 @@
 	[slot="foreground"] {
 		pointer-events: none;
 	}
-	
+/* 	
 	[slot="foreground"] section {
 		pointer-events: all;
-	}
+	} */
 	
 	section {
 		height: 80vh;
-		background-color: rgba(0,0,0,0);
-		color: white;
+		background-color: rgba(0, 0, 0, 0);
+		color: rgb(7, 0, 0);
 		padding: 1em;
 		margin: 0 0 2em 0;
 	}
+
   </style>
   
