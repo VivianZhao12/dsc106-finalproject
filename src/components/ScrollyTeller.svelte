@@ -456,7 +456,7 @@
         .append('rect')
         // .attr('display', 'none')
         .attr('x', 83) // X position
-        .attr('y', 59)  // Y position
+        .attr('y', 55)  // Y position
         .attr('width', 130) // Width
         .attr('height', 130) // Height
         .attr('fill', color) // Fill color
@@ -475,9 +475,9 @@
             .append('rect')
             // .attr('display', 'none')
             .attr('x', 83) // Adjust these attributes as necessary
-            .attr('y', 189)
+            .attr('y', 187)
             .attr('width', 130)
-            .attr('height', 118)
+            .attr('height', 117)
             .attr('fill', color) // Making it red for visibility
             .attr('opacity', 0.2)
             .attr('cursor', 'pointer')
@@ -511,7 +511,7 @@
         .append('rect')
         // .attr('display', 'none')
         .attr('x', 83) // X position
-        .attr('y', 59)  // Y position
+        .attr('y', 55)  // Y position
         .attr('width', 130) // Width
         .attr('height', 130) // Height
         .attr('fill', color) // Fill color
@@ -531,9 +531,9 @@
             .append('rect')
             // .attr('display', 'none')
             .attr('x', 83) // Adjust these attributes as necessary
-            .attr('y', 189)
+            .attr('y', 187)
             .attr('width', 130)
-            .attr('height', 122)
+            .attr('height', 117)
             .attr('fill', color) // Making it red for visibility
             .attr('opacity', 0.2)
             .attr('cursor', 'pointer')
@@ -568,7 +568,7 @@
         .append('rect')
         // .attr('display', 'none')
         .attr('x', 86) // X position
-        .attr('y', 44)  // Y position
+        .attr('y', 40)  // Y position
         .attr('width', 116) // Width
         .attr('height', 115) // Height
         .attr('fill', color) // Fill color
@@ -588,7 +588,7 @@
             .append('rect')
             // .attr('display', 'none')
             .attr('x', 86) // Adjust these attributes as necessary
-            .attr('y', 116+44)
+            .attr('y', 116+40)
             .attr('width', 116)
             .attr('height', 103)
             .attr('fill', color) // Making it red for visibility
